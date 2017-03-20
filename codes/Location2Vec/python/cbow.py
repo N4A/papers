@@ -12,6 +12,7 @@ import datetime
 import random
 import threading
 
+
 #控制内积范围，超过范围的再加sigmoid很小，可以丢弃
 MAX_EXP = 8
 
@@ -36,11 +37,14 @@ start_alpha = 0.03
 # 开始时间
 start_time = datetime.datetime.now()
 
+
 def sigmoid(x):
     return 1/(1 + math.exp(-x))
 
+
 def show_message():
     print('vector of location 0:',vec_table[0])
+
 
 # 训练index指定的用户
 def train(index):
@@ -112,7 +116,7 @@ def train(index):
 ## 利用多线程训练
 threads = []
 for i in range(len(users)):
-    threads.append(threading.Thread(target=train,args=(i,)))
+    threads.append(threading.Thread(target=train, args=(i,)))
 ## run
 for t in threads:
     t.setDaemon(True)
