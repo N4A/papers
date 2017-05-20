@@ -1,0 +1,14 @@
+_pycache_/
+.idea/
+
+# datasets
+data/
+movielens/
+
+# result
+models/
+result.md
+
+# test
+Test.py
+
