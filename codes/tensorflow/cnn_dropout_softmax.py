@@ -72,6 +72,8 @@ def main():
     # First Convolutional Layer
     W_conv1 = weight_variable([patch_size_conv1, patch_size_conv1, 1, feature_num_conv1])
     b_conv1 = bias_variable([feature_num_conv1])
+    # -1 means the number is to be inferred, the follows are same to this
+    # for example, here, -1 would be inferred to batch_size
     x_image = tf.reshape(x, [-1, input_img_width, input_img_width, 1])
     h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
     h_pool1 = max_pool_2x2(h_conv1)
@@ -85,7 +87,10 @@ def main():
 
     # Densely Connected Layer
     # get image witdh now
-    image_width = int(((input_img_width - patch_size_conv1 + 1) / 2 - patch_size_conv2 + 1) / 2)
+    if padding_conv == 'VALID':
+        image_width = int(((input_img_width - patch_size_conv1 + 1) / 2 - patch_size_conv2 + 1) / 2)
+    else:  # SAME
+        image_width = int(input_img_width / 4)
     W_fc1 = weight_variable([image_width * image_width * feature_num_conv2, size_fc1])
     b_fc1 = bias_variable([size_fc1])
 
@@ -126,7 +131,7 @@ def main():
             print("step %d, training accuracy %g" % (i, train_accuracy))
         train_step.run(feed_dict={x: batch[0], y_: batch[1], keep_prob: dropout_p})
 
-    # test
+    # test, and accuracy is about 0.9925
     print("test accuracy %g" % accuracy.eval(feed_dict={
         x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}))
 
