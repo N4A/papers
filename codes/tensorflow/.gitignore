@@ -4,3 +4,8 @@
 
 # datasets
 datasets/
+results/
+!/datasets/ml-100k/u1.base
+!/datasets/ml-100k/u1.test
+
+test.ipynb

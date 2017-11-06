@@ -1,0 +1,15 @@
+
+# sub git
+tensorflow/.git/
+
+# IDE settings
+tensorflow/.idea/
+
+# datasets
+tensorflow/datasets/
+
+# results
+tensorflow/results/
+
+
+tensorflow/test.ipynb
