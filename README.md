@@ -1,4 +1,4 @@
-#Memo for the papers
+# Memo
 
 ## 1. Memo Written in markdown
 
@@ -12,4 +12,5 @@
 2. [A paper about summarizing articles](./summarization/Language-Independent_Multi-Document_Text_Summarization.pptx)
 3. [VBPR](./RS/VBPR.pptx)
 4. ​
+
 
