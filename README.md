@@ -8,8 +8,8 @@
 
 ## 2. Some PPTs
 
-1. [Label-Free Supervision](./no-labeling/Label-Free Supervision.pptx)
-2. [A paper about summarizing articles](./summarization/Language-Independent Multi-Document Text Summarization.pptx)
+1. [Label-Free Supervision]('./no-labeling/Label-Free Supervision.pptx')
+2. [A paper about summarizing articles]('./summarization/Language-Independent Multi-Document Text Summarization.pptx')
 3. [VBPR](./RS/VBPR.pptx)
 4. ​
 
