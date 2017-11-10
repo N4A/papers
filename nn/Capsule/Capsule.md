@@ -1,5 +1,7 @@
 # Oh! Capsule
 
+date: 2017/11/09, author: wu
+
 ## 1 Transforming Auto-encoder(ICANN 2011 )
 
 ### 1.1 Introduction
@@ -130,5 +132,41 @@
 
 ## 3 Matrix capsules with EM routing  (ICLR 2018, under review)
 
+### 3.1 Introduction
 
+The system in previous paper has several deficiencies  as arguing in this paper:
+
+1. It uses the length of the pose vector to represent the probability that the entity represented by
+   a capsule is present. To keep the length less than 1 requires an unprincipled non-linearity
+   that prevents there from being any sensible objective function that is minimized by the
+   iterative routing procedure. 
+2. It uses the cosine of the angle between two pose vectors to measure their agreement. Unlike
+   the log variance of a Gaussian cluster, the cosine is not good at distinguishing between quite
+   good agreement and very good agreement 
+3. It uses a vector of length n rather than a matrix with n elements to represent a pose, so its
+   transformation matrices have n2 parameters rather than just n. 
+
+### 3.2 Model detail
+
+1. Model Graph
+
+   ![model](./img/em_capsnet.PNG)
+
+2. Gaussian mixture
+
+   ![gaussian mixture](./img/EM_old_faithful.gif)
+
+3. EM routing
+
+   ![em routing](./img/em_routing.PNG)
+
+4. Experiment Result: ADVERSARIAL ROBUSTNESS 
+
+   ![adversarial](./img/ad_re.PNG)
+
+   ​
+
+   ​
+
+   ​
 
