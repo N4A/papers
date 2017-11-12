@@ -11,6 +11,6 @@
 1. [Label-Free Supervision](./no-labeling/Label-Free_Supervision.pptx)
 2. [A paper about summarizing articles](./summarization/Language-Independent_Multi-Document_Text_Summarization.pptx)
 3. [VBPR](./RS/VBPR.pptx)
-4. ​
+4. ​[Capsule net](./nn/Capsule/Capsule_net.pptx)
 
 
