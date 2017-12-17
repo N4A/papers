@@ -4,16 +4,15 @@
 
 ### 1.1 Introduction
 
-To learn the generator’s distribution $p_g$ over data x, we define a prior on input noise variables $p_z(z)$, then represent a mapping to data space as $G(z; θ_g)$, where $G$ is a differentiable function represented by a multilayer perceptron with parameters $θ_g$. We also define a second multilayer perceptron $D(x; θ_d)$ that outputs a single scalar. $D(x)$ represents the probability
-that $x$ came from the data rather than $p_g$. We train $D$ to maximize the probability of assigning the correct label to both training examples and samples from $G$. We simultaneously train $G$ to minimize $log(1 - D(G(z)))$. In other words, $D$ and $G$ play the following two-player mini-max game with value function $V (G; D):$
+To learn the generator’s distribution $p_g$ over data x, we define a prior on input noise variables $p_z(z)$, then represent a mapping to data space as $G(z; θ_g)$, where $G$ is a differentiable function represented by a multilayer perceptron with parameters $θ_g$. We also define a second multilayer perceptron $D(x; θ_d)$ that outputs a single scalar. $D(x)$ represents the probability that $x$ came from the data rather than $p_g$. We train $D$ to maximize the probability of assigning the correct label to both training examples and samples from $G$. We simultaneously train $G$ to minimize $log(1 - D(G(z)))$. In other words, $D$ and $G$ play the following two-player mini-max game with value function $V (G; D):$
 
 $$min_G max_DV (D; G) = E_x∼p_{data(x)}[log D(x)] + E_{z∼p_z(z)}[log(1 - D(G(z)))]$$
 
-### 1.2 Theory Result
+### 1.2 Theory Analysis
 
 ![gan](./img/gan.png)
 
-## 2 Cycle GAN
+## 2 Cycle GAN(ICCV 2017)
 
 ## 2.1 Task: Cross Domain Image Translation 
 
@@ -95,9 +94,9 @@ Dataset: a subset of the aligned CelebA dataset
 
 ![experiment](./img/diat-experiment3.png)
 
-## 4 Unsupervised Cross-Domain Image Generation 
+## 4 Unsupervised Cross-Domain Image Generation(ICLR 2017 ) 
 
-## 4.1 Task
+### 4.1 Task
 
 Recent achievements replicate some of these capabilities to some degree: Generative Adversarial Networks (GANs) are able to convincingly generate novel samples that match that of a given training set; style transfer methods are able to alter the visual style of images; domain adaptation methods are able to generalize learned functions to new domains even without labeled samples in the target domain and transfer learning is now commonly used to import existing knowledge and to make learning much more efficient.
 
@@ -107,9 +106,45 @@ As a main application challenge, we tackle the problem of **emoji generation for
 
 ### 4.2 Model
 
+![dtn model](./img/dtn-model.png)
+
+Loss: 
+
+![dtn-loss](./img/dtn-loss.png)
+
+1. $D$ is a ternary classification function from the domain $T$ to 1,2,3, and $D_i(x)$ is the
+   probability it assigns to class $i = 1,2,3$ for an input sample $x$
+2. During optimization, $L_G$ is minimized over $g$ and $L_D$ is minimized over $D$ 
+3. $L_{CONST}$ enforces f-constancy for $x \in S$, while $L_{TID}$ enforces that for samples $x \in T$  
+4. $L_{TV}$ is an anisotropic total variation loss, which is added in order to slightly smooth the resulting image
+5. $f$ is trained use other datasets before training this model
+
+
+### 4.3 Experiments
+
+![dtn experiment](./img/dtn-e1.png)
+
+Dataset: 
+
+1. Street View House Number (SVHN) dataset to the domain of the MNIST dataset
+2. FROM PHOTOS TO EMOJI
+
+Metrics: MNIST Accuracy
+
+![e](./img/dtn-e2.png)
+
+![e3](./img/dtn-e3.png)
 
 
 ## 5 StarGAN: Multi-Domain Image-to-Image Translation  
 
+### 5.1 Introduction
 
+Recent studies have shown remarkable success in image-to-image translation for two domains. However, existing approaches have limited scalability and robustness in handling more than two domains, since different models should be built independently for every pair of image domains. 
+
+To address this limitation, we propose StarGAN, a novel and scalable approach that can perform image-to-image translations for multiple domains using only a single model
+
+We can further extend to training multiple domains from different datasets.
+
+ 
 
