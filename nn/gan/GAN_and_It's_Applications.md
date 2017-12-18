@@ -286,11 +286,9 @@ Metrics: Mean opinion score (MOS) testing(human evaluation)
 
 ![e](./img/sr-e2.png)
 
+## 8 Conclusion
 
-
-## Conclusion
-
-### Reason for using GAN
+### 8.1 Reason for using GAN
 
 - Difficulties of traditional methods
 
@@ -311,7 +309,7 @@ Metrics: Mean opinion score (MOS) testing(human evaluation)
 
   ​
 
-### Good ideas
+### 8.2 Good ideas
 
 - GAN Loss: keep high level domain feature
 - Keep specific entity feature
