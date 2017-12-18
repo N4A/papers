@@ -313,11 +313,13 @@ Metrics: Mean opinion score (MOS) testing(human evaluation)
 
 ### Good ideas
 
-- Given separated but otherwise unlabeled samples from domains $S$ and $T$ and a perceptual function $f$, learn a mapping $G : S \to T$ such that $f(x) ∼ f(G(x)$ 
-  1. Perceptual Loss
-  2. pre-trained f
-- Cycle consistency
-- Enhancement network
+- GAN Loss: keep high level domain feature
+- Keep specific entity feature
+  - Given separated but otherwise unlabeled samples from domains $S$ and $T$ and a perceptual function $f$, learn a mapping $G : S \to T$ such that $f(x) ∼ f(G(x)$ 
+    1. Perceptual Loss
+    2. pre-trained f
+  - Cycle consistency
+  - Enhancement network
 - Translations for multiple domains using only a single model
 
 
