@@ -196,7 +196,7 @@ Metrics: compute the classification error of a facial expression on synthesized 
 
 ![e](./img/stargan-e5.png)
 
-## 6 Pix2Pix: Image-to-Image Translation with Conditional Adversarial Networks(use paired training data)  
+## 6 Pix2Pix: Image-to-Image Translation with Conditional Adversarial Networks(use paired data)(CVPR 2017)  
 
 ### 6.1 Introduction
 
@@ -249,7 +249,7 @@ Metrics: AMT, FCN-scores
 
 ![loss](./img/pix2pix-e3.png)
 
-## 7 Photo-Realistic Single Image Super-Resolution Using a GAN(use paired data to train)
+## 7 Photo-Realistic Single Image Super-Resolution Using a GAN(use paired data to train)(CVPR 2017)
 
 ### 7.1 Task
 
@@ -293,14 +293,14 @@ Metrics: Mean opinion score (MOS) testing(human evaluation)
 - Difficulties of traditional methods
 
   1. How to design effective loss
-  2. Howto use unpaired data
+  2. How to use unpaired data
 
 - GAN’s advantages
 
   1. No need of the specific loss, but a high level goal
   2. Able to handle unpaired data
 
-- GAN’sdisadvantages
+- GAN’s disadvantages
 
   1. The Generator network often produce insensitive results
   2. Mode collapse: all inputs are mapped to the same output
@@ -313,11 +313,17 @@ Metrics: Mean opinion score (MOS) testing(human evaluation)
 
 - GAN Loss: keep high level domain feature
 - Keep specific entity feature
-  - Given separated but otherwise unlabeled samples from domains $S$ and $T$ and a perceptual function $f$, learn a mapping $G : S \to T$ such that $f(x) ∼ f(G(x)$ 
+  - Given separated but otherwise unlabeled samples from domains $S$ and $T$ and a perceptual function $f$, learn a mapping $G : S \to T$ such that $f(x) ∼ f(G(x))$ 
     1. Perceptual Loss
     2. pre-trained f
   - Cycle consistency
   - Enhancement network
 - Translations for multiple domains using only a single model
 
+
+### 8.3 Metrics
+
+- Human evaluation: AMT, MOS
+- Visualizing the generated  results
+- Use a model in the target domain to evaluate: FCN Scores(MNIST classifiers, VGG face classifier)
 
