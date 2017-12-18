@@ -146,5 +146,178 @@ To address this limitation, we propose StarGAN, a novel and scalable approach th
 
 We can further extend to training multiple domains from different datasets.
 
- 
+ ### 5.2 Model
+
+![model](./img/stargan-model.png)
+
+Loss:
+
+![loss](./img/stargan-loss.png)
+
+1. a domain classification loss of real images($L_{cls}^r$) used to optimize D, and a domain classification loss of fake images($L_{cls}^f$) used to optimize G 
+2. Use $L_{rec}$ to guarantee that translated images preserve the content of its input images while changing only the domain-related part of the inputs.
+
+### 5.3 Training with Multiple Datasets 
+
+#### 5.3.1 Mask Vector
+
+![mask](./img/stargan-maskv.png)
+
+In StarGAN, we use an n-dimensional one-hot vector to represent m, with n being the number of datasets.  and $c_i$ represents a vector for the labels of the $i$-th dataset. The vector of the known label $c_i$ can be represented as either a binary vector for binary attributes or a one-hot vector for categorical attributes
+
+#### 5.3.2 Training Strategy
+
+ When training StarGAN with multiple datasets, we use the domain label $\overset{\sim}{c}$ defined at above as input to the generator. By doing so, the generator learns to ignore the unspecified labels, which are zero vectors, and
+focus on the explicitly given label. The structure of the generator is exactly the same as in training with a single dataset, except for the dimension of the input label $\overset{\sim}{c}$. 
+
+### 5.3.3 CelebA and RaFD dataset demo
+
+![model](./img/stargan-model2.png)
+
+![model](./img/stargan-model3.png)
+
+### 5.4 Experiments
+
+Dataset: CelebA, RaFD
+
+![e](./img/stargan-e1.png)
+
+![e](./img/stargan-e3.png)
+
+![e](./img/stargan-e4.png)
+
+Metrics: AMT(human evaluation)
+
+![e](./img/stargan-e2.png)
+
+Dataset: RaFD dataset (90%/10% splitting for training and test sets) 
+
+Metrics: compute the classification error of a facial expression on synthesized images
+
+![e](./img/stargan-e5.png)
+
+## 6 Pix2Pix: Image-to-Image Translation with Conditional Adversarial Networks(use paired training data)  
+
+### 6.1 Introduction
+
+We investigate conditional adversarial networks as a general-purpose solution to image-to-image translation problems. These networks not only learn the mapping from input image to output image, but also learn a loss function to train this mapping. This makes it possible to apply the same generic approach to problems that traditionally would require very different loss formulations. 
+
+we no longer hand-engineer our mapping functions, and this work suggests we can achieve reasonable results without hand-engineering our loss functions either 
+
+(One architecture to different works)
+
+### 6.2 Model
+
+#### 6.2.1 Generator with skips 
+
+![model](./img/pix2pix-model1.png)
+
+#### 6.2.2 Conditional GANs
+
+![model](./img/pix2pix-model2.png)
+
+#### 6.2.3 PatchGAN 
+
+It is well known that the L2 loss and L1produce blurry results on image generation problems . Although these losses fail to encourage high-frequency crispness, in many cases they nonetheless accurately capture the low frequencies .
+
+In order to model high-frequencies, it is sufficient to restrict our attention to the structure in local image patches. Therefore, we design a discriminator architecture – which we term a PatchGAN – that only penalizes structure at the scale of patches. This discriminator tries to classify if each N × N patch in an image is real or fake. We run this discriminator convolutionally across the image, averaging all responses to provide the ultimate output of D 
+
+### 6.2.4 Loss
+
+![loss](./img/pix2pix-loss.png)
+
+### 6.3 Experiments
+
+Dataset:
+
+1. Semantic labels$photo, trained on the Cityscapes dataset.
+2. Architectural labels!photo, trained on CMP Facades
+3. Map to aerial photo, trained on data scraped from Google Maps.
+4. BW to color photos, trained on [50 Imagenet large scale visual recognition challenge].
+5. Edges to photo, trained on data from [64 Generative visual manipulation on the natural image manifold] and [59 Fine-Grained Visual Comparisons with Local Learning ]; binary edges generated using the HED edge detector [57 Holistically-nested edge detection ]  plus post processing.
+6. Sketch to photo: tests edges to photo models on human drawn sketches from [18 How do humans sketch objects].
+7. Day to night, trained on [32 Transient attributes for high-level understanding and editing of outdoor
+   scenes ].
+8. Thermal to color photos, trained on data from [26 Multispectral pedestrian detection: Benchmark dataset and baseline].
+9. Photo with missing pixels to inpainted photo, trained on Paris StreetView from [13 What makes paris look like paris] 
+
+Metrics: AMT, FCN-scores
+
+![loss](./img/pix2pix-e1.png)
+
+![loss](./img/pix2pix-e2.png)
+
+![loss](./img/pix2pix-e3.png)
+
+## 7 Photo-Realistic Single Image Super-Resolution Using a GAN(use paired data to train)
+
+### 7.1 Task
+
+Despite the breakthroughs in accuracy and speed of single image super-resolution using faster and deeper convolutional neural networks, one central problem remains largely unsolved: how do we recover the finer texture details when we super-resolve at large upscaling factors? 
+
+Recent work has largely focused on minimizing the mean squared reconstruction error. The resulting estimates have high peak signal-to-noise ratios, but they are often lacking high-frequency details and are perceptually unsatisfying in the sense that they fail to match the fidelity expected at the higher resolution.
+
+To our knowledge, it is the first framework capable of inferring photo-realistic natural images for **4× upscaling** factors. To achieve this, we propose a perceptual loss function which consists of an **adversarial loss** and a **content loss**
+
+### 7.2 Model
+
+![model](./img/sr-model.png)
+
+Loss:
+
+![model](./img/sr-loss.png)
+
+1.  $φ_{i,j}$ in $l_{VGG/i,j}^{SR}$ , we indicate the feature map obtained by the j-th convolution (after activation) before the i-th max pooling layer within the VGG19 network 
+2.  D network is optimized by the min-max game
+3.  G network is optimized by the loss $l^{SR}$
+
+### 7.3 Experiments
+
+Dataset: 
+
+1. Set5 [Low-complexity single-image super-resolution based on nonnegative neighbor embedding ],
+2. Set14 [On single image scale-up using sparse-representations ]
+3. BSD100
+4. the testing set of BSD300  
+
+Metrics: Mean opinion score (MOS) testing(human evaluation)
+
+![experiment](./img/sr-e1.png)
+
+![e](./img/sr-e2.png)
+
+
+
+## Conclusion
+
+### Reason for using GAN
+
+- Difficulties of traditional methods
+
+  1. How to design effective loss
+  2. Howto use unpaired data
+
+- GAN’s advantages
+
+  1. No need of the specific loss, but a high level goal
+  2. Able to handle unpaired data
+
+- GAN’sdisadvantages
+
+  1. The Generator network often produce insensitive results
+  2. Mode collapse: all inputs are mapped to the same output
+
+  ![mse problem](./img/mse-problem.png)
+
+  ​
+
+### Good ideas
+
+- Given separated but otherwise unlabeled samples from domains $S$ and $T$ and a perceptual function $f$, learn a mapping $G : S \to T$ such that $f(x) ∼ f(G(x)$ 
+  1. Perceptual Loss
+  2. pre-trained f
+- Cycle consistency
+- Enhancement network
+- Translations for multiple domains using only a single model
+
 
