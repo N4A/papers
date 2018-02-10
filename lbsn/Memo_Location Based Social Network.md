@@ -20,7 +20,7 @@ The following part will introduce some works in LBSN
 
 ## 2 Outline of related works
 
-## 2.1 POI
+### 2.1 POI
 
 1. A computer movie simulating urban growth in the Detroit region 
 2. Exploiting geographical inﬂuence for collaborative point-of-interest recommendation
@@ -44,7 +44,7 @@ The following part will introduce some works in LBSN
 1. Mining User Similarity from Semantic Trajectories 
 2. Exploiting place features in link prediction on location-based social networks
 
-## 3 A computer movie simulating urban growth in the Detroit region  
+## 3 Detail: A computer movie simulating urban growth in the Detroit region  
 
 Tobler’s First Law:  Everything is related to everything else, but near things are more related than distant thing.
 
