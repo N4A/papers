@@ -14,5 +14,6 @@
 3. [VBPR](./RS/VBPR.pptx)
 4. [Capsule net](./nn/Capsule/Capsule_net.pptx)
 5. [Cross-domain image generation based on GAN](./nn/gan/Cross-Domain-Image-Translation.pptx)
+6. [NMF and it's uniqueness](./rs/nmf/Uniqueness_of_NMF.pptx)
 
 
