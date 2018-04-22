@@ -10,7 +10,7 @@ $$min_G max_DV (D; G) = E_x∼p_{data(x)}[log D(x)] + E_{z∼p_z(z)}[log(1 - D(G
 
 ### 1.2 Theory Analysis
 
-![gan](./img/gan.png)
+![gan](https://github.com/N4A/papers/raw/master/nn/gan/img/gan.PNG)
 
 ## 2 Cycle GAN(ICCV 2017)
 
@@ -22,15 +22,15 @@ In this paper, we present a method that can learn to do the same: capturing spec
 
 ### 2.2 Model: Cycle consistent
 
-![Cycle GAN](./img/cycleGAN.png)
+![Cycle GAN](https://github.com/N4A/papers/raw/master/nn/gan/img/cycleGAN.PNG)
 
 Loss:
 
-![cycle gan loss](./img/cycleGAN-loss.png)
+![cycle gan loss](https://github.com/N4A/papers/raw/master/nn/gan/img/cycleGAN-loss.png)
 
 ### 2.3 Experiment
 
-![Experiments](./img/cycleGAN-experiments.png)
+![Experiments](https://github.com/N4A/papers/raw/master/nn/gan/img/cycleGAN-experiments.PNG)
 
 1. Dataset: Cityscapes dataset , map and aerial photo on data scraped from Google Maps 
 
@@ -38,11 +38,11 @@ Loss:
 
 3. Result:
 
-   ![Experiments](./img/cycleGAN-experiments2.png)
+   ![Experiments](https://github.com/N4A/papers/raw/master/nn/gan/img/cycleGAN-experiments2.PNG)
 
-   ![Experiments](./img/cycleGAN-experiments3.png)
+   ![Experiments](https://github.com/N4A/papers/raw/master/nn/gan/img/cycleGAN-experiments3.PNG)
 
-   ![Experiments](./img/cycleGAN-experiments4.png)
+   ![Experiments](https://github.com/N4A/papers/raw/master/nn/gan/img/cycleGAN-experiments4.PNG)
 
 ### 2.4 Limitations
 
@@ -50,7 +50,7 @@ Loss:
 2. Some failure cases are caused by the distribution characteristics of the training datasets.
 3. We also observe a lingering gap between the results achievable with paired training data and those achieved by our unpaired method.  
 
-![limitations](./img/cycleGAN-limit.png)
+![limitations](https://github.com/N4A/papers/raw/master/nn/gan/img/cycleGAN-limit.PNG)
 
 ## 3 DIAT: Deep Identity-aware Transfer of Facial Attributes
 
@@ -64,35 +64,35 @@ In this section, a two-stage scheme is developed to tackle the identity-aware at
 
 1. Face transform network
 
-   ![diat-transform](./img/diat-transform.png)
+   ![diat-transform](https://github.com/N4A/papers/raw/master/nn/gan/img/diat-transform.PNG)
 
    Loss: 
 
-   ![loss](./img/diat-transform-loss.png)
+   ![loss](https://github.com/N4A/papers/raw/master/nn/gan/img/diat-transform-loss.png)
 
 2. Face Enhancement Network
 
-   ![enhance](./img/diat-enhance.png)
+   ![enhance](https://github.com/N4A/papers/raw/master/nn/gan/img/diat-enhance.PNG)
 
    Loss:
 
-   ![loss](./img/diat-enhance-loss.png)
+   ![loss](https://github.com/N4A/papers/raw/master/nn/gan/img/diat-enhance-loss.png)
 
 ### 3.3 DIAT-A
 
 In DIAT, the perceptual identity loss is defined on the pre-trained VGG-Face. Actually, it may be more effective to define this loss on some CNN trained to attribute transfer. Here we treat identity-preserving and attribute transfer as two related tasks, and define the perceptual identity loss based on the convolutional features of the discriminator. By this way, the network parameters for identity loss will be changed along with the updating of discriminator, and thus we named it as adaptive perceptual identity loss. 
 
-![loss](./img/diat-a-transform-loss.png)
+![loss](https://github.com/N4A/papers/raw/master/nn/gan/img/diat-a-transform-loss.png)
 
 ### 3.4 Experiments
 
 Dataset: a subset of the aligned CelebA dataset  
 
-![experiment](./img/diat-experiment1.png)
+![experiment](https://github.com/N4A/papers/raw/master/nn/gan/img/diat-experiment1.PNG)
 
-![experiment](./img/diat-experiment2.png)
+![experiment](https://github.com/N4A/papers/raw/master/nn/gan/img/diat-experiment2.PNG)
 
-![experiment](./img/diat-experiment3.png)
+![experiment](https://github.com/N4A/papers/raw/master/nn/gan/img/diat-experiment3.PNG)
 
 ## 4 Unsupervised Cross-Domain Image Generation(ICLR 2017 ) 
 
@@ -106,11 +106,11 @@ As a main application challenge, we tackle the problem of **emoji generation for
 
 ### 4.2 Model
 
-![dtn model](./img/dtn-model.png)
+![dtn model](https://github.com/N4A/papers/raw/master/nn/gan/img/dtn-model.PNG)
 
 Loss: 
 
-![dtn-loss](./img/dtn-loss.png)
+![dtn-loss](https://github.com/N4A/papers/raw/master/nn/gan/img/dtn-loss.png)
 
 1. $D$ is a ternary classification function from the domain $T$ to 1,2,3, and $D_i(x)$ is the
    probability it assigns to class $i = 1,2,3$ for an input sample $x$
@@ -122,7 +122,7 @@ Loss:
 
 ### 4.3 Experiments
 
-![dtn experiment](./img/dtn-e1.png)
+![dtn experiment](https://github.com/N4A/papers/raw/master/nn/gan/img/dtn-e1.PNG)
 
 Dataset: 
 
@@ -131,9 +131,9 @@ Dataset:
 
 Metrics: MNIST Accuracy
 
-![e](./img/dtn-e2.png)
+![e](https://github.com/N4A/papers/raw/master/nn/gan/img/dtn-e2.PNG)
 
-![e3](./img/dtn-e3.png)
+![e3](https://github.com/N4A/papers/raw/master/nn/gan/img/dtn-e3.PNG)
 
 
 ## 5 StarGAN: Multi-Domain Image-to-Image Translation  
@@ -148,11 +148,11 @@ We can further extend to training multiple domains from different datasets.
 
  ### 5.2 Model
 
-![model](./img/stargan-model.png)
+![model](https://github.com/N4A/papers/raw/master/nn/gan/img/stargan-model.PNG)
 
 Loss:
 
-![loss](./img/stargan-loss.png)
+![loss](https://github.com/N4A/papers/raw/master/nn/gan/img/stargan-loss.png)
 
 1. a domain classification loss of real images($L_{cls}^r$) used to optimize D, and a domain classification loss of fake images($L_{cls}^f$) used to optimize G 
 2. Use $L_{rec}$ to guarantee that translated images preserve the content of its input images while changing only the domain-related part of the inputs.
@@ -161,7 +161,7 @@ Loss:
 
 #### 5.3.1 Mask Vector
 
-![mask](./img/stargan-maskv.png)
+![mask](https://github.com/N4A/papers/raw/master/nn/gan/img/stargan-maskv.PNG)
 
 In StarGAN, we use an n-dimensional one-hot vector to represent m, with n being the number of datasets.  and $c_i$ represents a vector for the labels of the $i$-th dataset. The vector of the known label $c_i$ can be represented as either a binary vector for binary attributes or a one-hot vector for categorical attributes
 
@@ -172,29 +172,29 @@ focus on the explicitly given label. The structure of the generator is exactly t
 
 ### 5.3.3 CelebA and RaFD dataset demo
 
-![model](./img/stargan-model2.png)
+![model](https://github.com/N4A/papers/raw/master/nn/gan/img/stargan-model2.PNG)
 
-![model](./img/stargan-model3.png)
+![model](https://github.com/N4A/papers/raw/master/nn/gan/img/stargan-model3.PNG)
 
 ### 5.4 Experiments
 
 Dataset: CelebA, RaFD
 
-![e](./img/stargan-e1.png)
+![e](https://github.com/N4A/papers/raw/master/nn/gan/img/stargan-e1.PNG)
 
-![e](./img/stargan-e3.png)
+![e](https://github.com/N4A/papers/raw/master/nn/gan/img/stargan-e3.PNG)
 
-![e](./img/stargan-e4.png)
+![e](https://github.com/N4A/papers/raw/master/nn/gan/img/stargan-e4.PNG)
 
 Metrics: AMT(human evaluation)
 
-![e](./img/stargan-e2.png)
+![e](https://github.com/N4A/papers/raw/master/nn/gan/img/stargan-e2.PNG)
 
 Dataset: RaFD dataset (90%/10% splitting for training and test sets) 
 
 Metrics: compute the classification error of a facial expression on synthesized images
 
-![e](./img/stargan-e5.png)
+![e](https://github.com/N4A/papers/raw/master/nn/gan/img/stargan-e5.PNG)
 
 ## 6 Pix2Pix: Image-to-Image Translation with Conditional Adversarial Networks(use paired data)(CVPR 2017)  
 
@@ -210,11 +210,11 @@ we no longer hand-engineer our mapping functions, and this work suggests we can 
 
 #### 6.2.1 Generator with skips 
 
-![model](./img/pix2pix-model1.png)
+![model](https://github.com/N4A/papers/raw/master/nn/gan/img/pix2pix-model1.PNG)
 
 #### 6.2.2 Conditional GANs
 
-![model](./img/pix2pix-model2.png)
+![model](https://github.com/N4A/papers/raw/master/nn/gan/img/pix2pix-model2.PNG)
 
 #### 6.2.3 PatchGAN 
 
@@ -224,7 +224,7 @@ In order to model high-frequencies, it is sufficient to restrict our attention t
 
 ### 6.2.4 Loss
 
-![loss](./img/pix2pix-loss.png)
+![loss](https://github.com/N4A/papers/raw/master/nn/gan/img/pix2pix-loss.png)
 
 ### 6.3 Experiments
 
@@ -243,11 +243,11 @@ Dataset:
 
 Metrics: AMT, FCN-scores
 
-![loss](./img/pix2pix-e1.png)
+![loss](https://github.com/N4A/papers/raw/master/nn/gan/img/pix2pix-e1.PNG)
 
-![loss](./img/pix2pix-e2.png)
+![loss](https://github.com/N4A/papers/raw/master/nn/gan/img/pix2pix-e2.PNG)
 
-![loss](./img/pix2pix-e3.png)
+![loss](https://github.com/N4A/papers/raw/master/nn/gan/img/pix2pix-e3.PNG)
 
 ## 7 Photo-Realistic Single Image Super-Resolution Using a GAN(use paired data to train)(CVPR 2017)
 
@@ -261,11 +261,11 @@ To our knowledge, it is the first framework capable of inferring photo-realistic
 
 ### 7.2 Model
 
-![model](./img/sr-model.png)
+![model](https://github.com/N4A/papers/raw/master/nn/gan/img/sr-model.PNG)
 
 Loss:
 
-![model](./img/sr-loss.png)
+![model](https://github.com/N4A/papers/raw/master/nn/gan/img/sr-loss.png)
 
 1.  $φ_{i,j}$ in $l_{VGG/i,j}^{SR}$ , we indicate the feature map obtained by the j-th convolution (after activation) before the i-th max pooling layer within the VGG19 network 
 2.  D network is optimized by the min-max game
@@ -282,9 +282,9 @@ Dataset:
 
 Metrics: Mean opinion score (MOS) testing(human evaluation)
 
-![experiment](./img/sr-e1.png)
+![experiment](https://github.com/N4A/papers/raw/master/nn/gan/img/sr-e1.PNG)
 
-![e](./img/sr-e2.png)
+![e](https://github.com/N4A/papers/raw/master/nn/gan/img/sr-e2.PNG)
 
 ## 8 Conclusion
 
@@ -305,7 +305,7 @@ Metrics: Mean opinion score (MOS) testing(human evaluation)
   1. The Generator network often produce insensitive results
   2. Mode collapse: all inputs are mapped to the same output
 
-  ![mse problem](./img/mse-problem.png)
+  ![mse problem](https://github.com/N4A/papers/raw/master/nn/gan/img/mse-problem.PNG)
 
   ​
 
@@ -326,4 +326,3 @@ Metrics: Mean opinion score (MOS) testing(human evaluation)
 - Human evaluation: AMT, MOS
 - Visualizing the generated  results
 - Use a model in the target domain to evaluate: FCN Scores(MNIST classifiers, VGG face classifier)
-
