@@ -15,5 +15,6 @@
 4. [Capsule net](./nn/Capsule/Capsule_net.pptx)
 5. [Cross-domain image generation based on GAN](./nn/gan/Cross-Domain-Image-Translation.pptx)
 6. [NMF and it's uniqueness](./RS/nmf/Uniqueness_of_NMF.pptx)
+7. [Bandit approaches for recommendation](./RS/Contextual-Bandit_for_Recommendation.pptx) 
 
 
