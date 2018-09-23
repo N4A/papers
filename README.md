@@ -18,5 +18,6 @@
 6. [NMF and it's uniqueness](./RS/nmf/Uniqueness_of_NMF.pptx)
 7. [Bandit approaches for recommendation](./RS/Contextual-Bandit_for_Recommendation.pptx) 
 8. [Equivariant CNNs](./nn/CNN/Equivariant_CNN.pptx)
+9. [ICML18 papers about GAN theory](./nn/gan/theory/ICML18_Papers_about_GAN_Theory.pptx)
 
 
