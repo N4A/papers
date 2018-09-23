@@ -1,6 +1,6 @@
-## Word2Vec
+### Introduction
 
-我看了一些Word2Vec的一些相关文章，主要分为两类。一是有关于Word2Vec的发展，主要是以下4篇文章起到奠基性的作用
+最近看了一些Word2Vec的一些相关文章，主要分为两类。一是有关于Word2Vec的发展，主要是以下4篇文章起到奠基性的作用
 
 1. A Neural Probabilistic Language Model.2003 (NNLM)
 
@@ -21,7 +21,7 @@
 
 ### Development
 
-#### NNLM: A Neural Probabilistic Language Model.2003 
+#### NPLM: A Neural Probabilistic Language Model.2003 
 
 这篇文章主要解决在此之前的自然语言模型是统计语言模型和基于统计语言模型n-gram模型的维度灾难问题。
 

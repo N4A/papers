@@ -6,6 +6,7 @@
 2. [About Capsule net](./nn/Capsule/Capsule.md)
 3. [统计学习方法——李航](./books/统计学习方法--李航.md)
 4. [Cross-domain image generation based on GAN](./nn/gan/GAN_and_It's_Applications.md)
+5. [ICML2018 GAN理论文章总结](./nn/gan/theory/gan_icml18.md)
 
 ## 2. Some PPTs
 
